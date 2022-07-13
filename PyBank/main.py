@@ -19,10 +19,10 @@ change = 0.0
 # Read Csv
 with open(csvpath) as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
-
+    # Storing Header
     header = next(csv_reader)
 
-    
+    # Looping Through CSV File
     for row in csv_reader:
         
         total_months += 1 
@@ -45,12 +45,15 @@ with open(csvpath) as csv_file:
 
             last_month_profit_loss = current_profit_loss
 
+    # finding sum and of all profits and loss and finding average change
     sum_profit_loss = sum(profit_loss)
-    mean_profit_loss = (sum_profit_loss / (total_months - 1))
+    mean_profit_loss = round((sum_profit_loss / (total_months - 1)),2)
 
+    # finding greatest increase and decrease
     greatest_increase = max(profit_loss)
     greatest_decrease = min(profit_loss)
 
+    # get index for greatest increase and decrease
     index_greatest_increase = profit_loss.index(greatest_increase)
     index_greatest_decrease = profit_loss.index(greatest_decrease)
 
