@@ -4,6 +4,7 @@ import csv
 
 # Csv Path
 csvpath = os.path.join('Resources', 'budget_data.csv')
+outpath = os.path.join('output', 'pybank.txt')
 
 # Defining varibales
 months = []
@@ -63,11 +64,21 @@ with open(csvpath) as csv_file:
 print("Financial Analysis")
 print("--------------------")
 print(f"Total Months: {total_months}")
-print(f"Total: {sum_profit_loss}")
+print(f"Total: {total_profit_loss}")
 print(f"Average Change: {mean_profit_loss}")
+print(f"Greatest Increase in Profits: {greatest_increase_month} ${greatest_increase:,.2f}")
+print(f"Greatest Decrease in Profits: {greatest_decrease_month} ${greatest_decrease:,.2f}")
 
 
-
+with open(outpath, 'w') as output:
+    output.write("Financial Analysis")
+    output.write("----------------------")
+    output.write(f"Total Months: {total_months}")
+    output.write(f"Total: {total_profit_loss}")
+    output.write(f"Average Change: {mean_profit_loss}")
+    output.write(f"Greatest Increase in Profits: {greatest_increase_month} ${greatest_increase:,.2f}")
+    output.write(f"Greatest Decrease in Profits: {greatest_decrease_month} ${greatest_decrease:,.2f}")
+    
 
 
 
