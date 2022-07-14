@@ -71,14 +71,14 @@ print(f"Greatest Decrease in Profits: {greatest_decrease_month} ${greatest_decre
 
 
 with open(outpath, 'w') as output:
-    output.write("Financial Analysis")
-    output.write("----------------------")
-    output.write(f"Total Months: {total_months}")
-    output.write(f"Total: {total_profit_loss}")
-    output.write(f"Average Change: {mean_profit_loss}")
-    output.write(f"Greatest Increase in Profits: {greatest_increase_month} ${greatest_increase:,.2f}")
-    output.write(f"Greatest Decrease in Profits: {greatest_decrease_month} ${greatest_decrease:,.2f}")
-    
+    output.write("Financial Analysis\n")
+    output.write("----------------------\n")
+    output.write(f"Total Months: {total_months}\n")
+    output.write(f"Total: {total_profit_loss}\n")
+    output.write(f"Average Change: {mean_profit_loss}\n")
+    output.write(f"Greatest Increase in Profits: {greatest_increase_month} ${greatest_increase:,.2f}\n")
+    output.write(f"Greatest Decrease in Profits: {greatest_decrease_month} ${greatest_decrease:,.2f}\n")
+
 
 
 
