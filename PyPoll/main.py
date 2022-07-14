@@ -28,7 +28,8 @@ with open(csv_path) as csvfile:
         votes += 1
 
         canidates.append(row[2])
-    # loop to collect data for each unique canidate x is canadate y is their votes z is their vote perctentage    
+    # loop to collect data for each unique canidate x is canadate y is their votes z is their vote perctentage
+    # using set because it will only store the value once, easy way to get the unique values    
     for x in set(canidates):
         
         canidates_unique.append(x)
@@ -37,23 +38,24 @@ with open(csv_path) as csvfile:
         # append to vote count
         vote_count.append(y)
         # z calculate each canadates vote perctenage
-        z = (y / votes) * 100
+        z = (y / votes)
         # append to vote percentage list 
         vote_percent.append(z)
     
     winning_votes_total = max(vote_count)
     election_winner = canidates_unique[vote_count.index(winning_votes_total)]
 
+# print results
 print("Election Results")
 print("------------------------")
 print(f"Total Votes: {votes}")
 print("------------------------")
 for i in range(len(set(canidates_unique))):
-    print(f"{canidates_unique[i]} : {vote_percent[i]} ({vote_count[i]})")
+    print(f"{canidates_unique[i]} : {vote_percent[i]:.0%} ({vote_count[i]})")
 print(f"Winner: {election_winner}")
 
 
 
 
 
-# Print Results
+
